@@ -6,7 +6,7 @@ ENV HOME="/" \
     OS_FLAVOUR="debian-10" \
     OS_NAME="linux"
 
-RUN yum install sudo -y
+RUN apt-get install sudo -y
 RUN useradd -m -p $(perl -e 'print crypt($ARGV[0], "password")' '1') -s /bin/bash wikiadm
 RUN usermod -aG sudo wikiadm
 COPY prebuildfs /
