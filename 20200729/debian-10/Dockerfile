@@ -16,8 +16,8 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "render-template"
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "gosu" "1.12.0-2" --checksum 4d858ac600c38af8de454c27b7f65c0074ec3069880cb16d259a6e40a46bbc50
 RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "dokuwiki" "20200729.0.0-1" --checksum d2f0229f0f6c663aeae3f77b297f8c415aae81543a2206686387a0b622411086
 RUN chmod g+rwX /opt/bitnami
-RUN useradd -m -p $(perl -e 'print crypt($ARGV[0], "password")' '1') -s /bin/bash wikiadm
-RUN usermod -aG sudo wikiadm
+#RUN useradd -m -p $(perl -e 'print crypt($ARGV[0], "password")' '1') -s /bin/bash wikiadm
+#RUN usermod -aG sudo wikiadm
 
 COPY rootfs /
 RUN /opt/bitnami/scripts/apache/postunpack.sh
