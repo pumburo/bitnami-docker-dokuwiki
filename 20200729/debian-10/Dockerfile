@@ -32,7 +32,7 @@ ENV APACHE_ENABLE_CUSTOM_PORTS="no" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/common/bin:$PATH"
 
 EXPOSE 8080 8443
-USER 1001
+USER wikiadm
 # RUN usermod -aG sudo $( cat /etc/passwd | tail -1 | awk '{ print $1 }' | head -c 10)
 ENTRYPOINT [ "/opt/bitnami/scripts/dokuwiki/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
